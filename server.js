@@ -8,9 +8,10 @@ const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const FRONTEND_URL=process.env.FRONTEND||'http://localhost:4200'
 
 app.use(cors({
-  origin: 'http://localhost:4200', // Allow requests from Angular frontend
+  origin: FRONTEND_URL, // Allow requests from Angular frontend
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization'
 }));
